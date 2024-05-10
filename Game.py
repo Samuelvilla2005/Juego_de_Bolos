@@ -83,13 +83,22 @@ def ingresar_tirada(numero_frame, primera=False):
 
 def crear_frame(numero_frame):
     tirada1 = ingresar_tirada(numero_frame, primera=True)
-    if tirada1 == 10:
-        return Frame10(tirada1)
+    if numero_frame == 10:
+        if tirada1 == 10:
+            return Frame10(tirada1, extra=ingresar_tirada(numero_frame))
+        else:
+            tirada2 = ingresar_tirada(numero_frame)
+            if tirada1 + tirada2 > 10:
+                raise FrameInvalido("Suma de tiradas no puede ser mayor a 10.")
+            return Frame(tirada1, tirada2)
     else:
-        tirada2 = ingresar_tirada(numero_frame)
-        if tirada1 + tirada2 > 10:
-            raise FrameInvalido("Suma de tiradas no puede ser mayor a 10.")
-        return Frame(tirada1, tirada2)
+        if tirada1 == 10:
+            return Frame10(tirada1)
+        else:
+            tirada2 = ingresar_tirada(numero_frame)
+            if tirada1 + tirada2 > 10:
+                raise FrameInvalido("Suma de tiradas no puede ser mayor a 10.")
+            return Frame(tirada1, tirada2)
 
 
 def mostrar_tabla(frames):
