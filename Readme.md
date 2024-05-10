@@ -23,7 +23,9 @@ Por ejemplo:
 
 Para un frame 10 que tenga X 1/ (strike y spare), el valor total será 20.
 Para un frame 10 que tenga XXX (tres strikes), el valor total será 30.
+
 Actividad
 Implemente el código necesario para llevar registro del puntaje de un juego de bolos, aplicando principios de orientación a objetos y teniendo en cuenta la modularización y la abstracción en el diseño.
 
 Al finalizar, suba el enlace al repositorio con la solución del taller (incluyedo el diseño de clases)
+
